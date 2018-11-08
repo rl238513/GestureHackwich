@@ -9,6 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var yellowView: UIView!
+    @IBOutlet weak var blueView: UIView!
+    
+    var isBlue = true
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,5 +24,23 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func onTap(_ sender: Any) {
+        if isBlue == true {
+            blueView.backgroundColor = yellowView.backgroundColor
+        }else{
+            blueView.backgroundColor = .blue
+        }
+        isBlue = !isBlue
+    }
+    
+    @IBAction func didpan(_ sender: UIPanGestureRecognizer) {
+        var point = sender.location(in: yellowView)
+        yellowView.center = CGPoint(x: point.x, y: point.y)
+        print(point)
+    }
+    
+    
+    
+    
 }
 
