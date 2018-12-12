@@ -39,8 +39,5 @@ class ViewController: UIViewController {
         print(point)
     }
     
-    
-    
-    
 }
 
